@@ -25,12 +25,7 @@ app.use(morgan('dev'))
 app.use(trim)
 app.use(cookieParser())
 app.use(
-    cors({
-        credentials: true,
-        origin: "*",
-        optionsSuccessStatus: 200,
-        "preflightContinue": false,
-    })
+    cors()
 )
 app.use(express.static('public'))
 
