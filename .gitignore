@@ -7,3 +7,5 @@ temp/
 /**/*.env
 notes.md
 VSCodeCounter
+package.lock.json
+yarn.lock.json
