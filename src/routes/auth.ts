@@ -100,8 +100,8 @@ const logout = (_: Request, res: Response) => {
         'Set-Cookie',
         cookie.serialize('token', '', {
             httpOnly: true,
-            // secure: process.env.NODE_ENV === 'production',
-            sameSite: 'strict',
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: 'none',
             expires: new Date(0),
             path: '/',
         })
