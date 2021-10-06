@@ -29,6 +29,7 @@ app.use(
         credentials: true,
         origin: process.env.ORIGIN,
         optionsSuccessStatus: 200,
+        //asdasd
     })
 )
 // app.use(function (_, res, next) {
