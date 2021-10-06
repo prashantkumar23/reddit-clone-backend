@@ -29,7 +29,7 @@ app.use(
         credentials: true,
         origin: process.env.ORIGIN,
         optionsSuccessStatus: 200,
-        allowedHeaders: ""
+        "preflightContinue": false,
     })
 )
 app.use(express.static('public'))
