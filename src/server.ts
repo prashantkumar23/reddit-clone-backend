@@ -27,7 +27,7 @@ app.use(cookieParser())
 app.use(
     cors({
         credentials: true,
-        origin: "https://reddit-clonee-backend.herokuapp.com",
+        origin: "https://reddit-clone-frontend.vercel.app",
         optionsSuccessStatus: 200,
     })
 )
