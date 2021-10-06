@@ -24,12 +24,20 @@ app.use(express.json())
 app.use(morgan('dev'))
 app.use(trim)
 app.use(cookieParser())
-app.use(
-    cors({
-        credentials: true,
-        optionsSuccessStatus: 200,
-    })
-)
+// app.use(
+//     cors({
+//         credentials: true,
+//         origin: process.env.ORIGIN,
+//         optionsSuccessStatus: 200,
+//     })
+// )
+app.use(function (_, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Allow-Credentials', "true");
+    next();
+});
 app.use(express.static('public'))
 
 app.get('/', (_, res) => res.send('Hello World'))
