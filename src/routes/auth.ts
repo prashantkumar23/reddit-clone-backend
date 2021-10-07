@@ -76,7 +76,7 @@ const login = async (req: Request, res: Response) => {
         res.set(
             'Set-Cookie',
             cookie.serialize('token', token, {
-                httpOnly: true,
+                httpOnly: false,
                 secure: process.env.NODE_ENV === 'production',
                 sameSite: 'none',
                 maxAge: 3600,
@@ -99,7 +99,7 @@ const logout = (_: Request, res: Response) => {
     res.set(
         'Set-Cookie',
         cookie.serialize('token', '', {
-            httpOnly: true,
+            httpOnly: false,
             secure: process.env.NODE_ENV === 'production',
             sameSite: 'none',
             expires: new Date(0),
