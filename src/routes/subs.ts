@@ -54,6 +54,7 @@ const getSub = async (req: Request, res: Response) => {
 
     try {
         const sub = await Sub.findOneOrFail({ name })
+        console.log(sub);
         const posts = await Post.find({
             where: { sub },
             order: { createdAt: 'DESC' },
@@ -99,7 +100,7 @@ const upload = multer({
         },
     }),
     fileFilter: (_, file: any, callback: FileFilterCallback) => {
-        if (file.mimetype == 'image/jpeg' || file.mimetype == 'image/png') {
+        if (file.mimetype == 'image/jpeg' || file.mimetype == 'image/png' || file.mimetype == 'image/jpg') {
             callback(null, true)
         } else {
             callback(new Error('Not an image'))
@@ -128,9 +129,9 @@ const uploadSubImage = async (req: Request, res: Response) => {
         }
         await sub.save()
 
-        if (oldImageUrn !== '') {
-            fs.unlinkSync(`public\\images\\${oldImageUrn}`)
-        }
+        // if (oldImageUrn !== '') {
+        //     fs.unlinkSync(`public\\images\\${oldImageUrn}`)
+        // }
 
         return res.json(sub)
     } catch (err) {
