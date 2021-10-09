@@ -76,11 +76,11 @@ const login = async (req: Request, res: Response) => {
         res.set(
             'Set-Cookie',
             cookie.serialize('token', token, {
-                httpOnly: false,
-                secure: true,
-                sameSite: 'none',
-                maxAge: 3600,
-                path: '/',
+                maxAge: 1000 * 60 * 60 * 24 * 365 * 10, // 10 years
+                httpOnly: true,
+                path: "/",
+                sameSite: "none",
+                secure: true
             })
         )
 
@@ -99,11 +99,11 @@ const logout = (_: Request, res: Response) => {
     res.set(
         'Set-Cookie',
         cookie.serialize('token', '', {
-            httpOnly: false,
-            secure: true,
-            sameSite: 'none',
-            expires: new Date(0),
-            path: '/',
+            maxAge: 1000 * 60 * 60 * 24 * 365 * 10, // 10 years
+            httpOnly: true,
+            path: "/",
+            sameSite: "none",
+            secure: true
         })
     )
 
