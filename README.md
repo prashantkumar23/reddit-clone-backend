@@ -33,26 +33,26 @@
 
 API Routes:
 
-(POST) api/auth/register - for registering new users
-(POST) api/auth/login - for signing in existing users
-(GET) api/auth/me - to get the details of current logged in user
-(GET) api/auth/logout - for sign out
+1. (POST) api/auth/register - for registering new users
+2. (POST) api/auth/login - for signing in existing users
+3. (GET) api/auth/me - to get the details of current logged in user
+4. (GET) api/auth/logout - for sign out
 
-(GET) api/users/:username - to get the detail of the user
+5. (GET) api/users/:username - to get the detail of the user
 
-(POST) api/posts/ - to create a post
-(GET) api/posts/ - to get all post
-(GET) api/posts/:identifier/:slug - to get a specific post
-(POST) api/posts/:identifier/:slug/comments - to comment on post
-(GET) api/posts/:identifier/:slug/comments - to get the all comments of that post
+6. (POST) api/posts/ - to create a post
+7. (GET) api/posts/ - to get all post
+8. (GET) api/posts/:identifier/:slug - to get a specific post
+9. (POST) api/posts/:identifier/:slug/comments - to comment on post
+10. (GET) api/posts/:identifier/:slug/comments - to get the all comments of that post
 
-(POST) api/subs/ - to create a sub
-(GET) api/subs/:name - to get the sub
-(GET) api/subs/search/:name - to do the search
-(POST) api/subs/:name/image - to upload banner and display image
+11. (POST) api/subs/ - to create a sub
+12. (GET) api/subs/:name - to get the sub
+13. (GET) api/subs/search/:name - to do the search
+14. (POST) api/subs/:name/image - to upload banner and display image
 
-(POST) api/misc/vote - to downvote and upvote on any post or comment
-(GET) api/misc/top-subs - to the top subs(top community)
+15. (POST) api/misc/vote - to downvote and upvote on any post or comment
+16. (GET) api/misc/top-subs - to the top subs(top community)
 
 Steps to run this repo:
 
