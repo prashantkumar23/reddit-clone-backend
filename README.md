@@ -1,4 +1,4 @@
-## [Code for frotend](https://github.com/prashantkumar23/reddit-clone-frontend)
+## [Code for frontend](https://github.com/prashantkumar23/reddit-clone-frontend)
 
 # Features:
 
